@@ -1,6 +1,6 @@
 context:
   name: polars-st
-  version: "0.4.0"
+  version: "0.4.1"
 
 package:
   name: ${{ name|lower }}
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/oreilles/polars-st/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 5340ba8a11d722d819e819c9e9e86ce7dc3bcdac6ce6b0ebeba17e5d28e4db70
+  sha256: 4e95ce0282858eb5b38fd0dfa0d2a8cd43fb053d580a8c8841530e86d33a9c64
 
 build:
-  number: 1
+  number: 0
   script:
     - ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
