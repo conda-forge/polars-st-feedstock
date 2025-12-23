@@ -31,6 +31,7 @@ requirements:
         - crossenv
         - cross-python_${{ target_platform }}
     - cargo-auditable
+    - python
     - puccinialin
     - maturin
     - cargo-bundle-licenses
@@ -38,7 +39,6 @@ requirements:
     - pip
   host:
     - maturin
-    - python
     - pip
   run:
     - python
