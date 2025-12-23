@@ -22,3 +22,5 @@ azure:
       CONDA_BLD_PATH: C:\\bld\\
 bot:
   automerge: true
+
+test: native_and_emulated
