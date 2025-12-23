@@ -5,6 +5,7 @@ github:
   tooling_branch_name: main
 conda_build:
   error_overlinking: true
+  pkg_format: '2'
 conda_forge_output_validation: true
 
 build_platform:
@@ -21,6 +22,3 @@ azure:
       CONDA_BLD_PATH: C:\\bld\\
 bot:
   automerge: true
-
-conda_build:
-  pkg_format: '2'
