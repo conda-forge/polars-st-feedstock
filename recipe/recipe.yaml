@@ -28,10 +28,11 @@ requirements:
     - if: build_platform != target_platform
       then:
         - python
-        - maturin
+        - crossenv
         - cross-python_${{ target_platform }}
     - cargo-auditable
     - puccinialin
+    - maturin
     - cargo-bundle-licenses
     - cmake
     - pip
