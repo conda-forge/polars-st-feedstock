@@ -11,7 +11,7 @@ source:
   sha256: 55333d59aee7e0212fa9611fee433fd0eebc5c39cc93123090434dc230eaee73
 
 build:
-  number: 0
+  number: 1
   script:
     - ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
@@ -25,8 +25,15 @@ requirements:
 
     - if: unix
       then: make
+    - if: build_platform != target_platform
+      then:
+        - python
+        - crossenv
+        - cross-python_${{ target_platform }}
     - cargo-auditable
+    - python
     - puccinialin
+    - maturin
     - cargo-bundle-licenses
     - cmake
     - pip
@@ -40,6 +47,10 @@ requirements:
     - pyogrio >0.9.0
     - pyarrow >=19.0.1
     - certifi
+  ignore_run_exports:
+    from_package:
+      - cross-python_${{ target_platform }}
+
 
 tests:
   - python:
